@@ -1,6 +1,6 @@
 #include <stdio.h>
     //functie schrijven
-int largest(int arr[], int arrSize)
+void largest(int arr[], int arrSize, int* ref)
     {
     int i;
     int max = arr[0];
@@ -11,12 +11,14 @@ int largest(int arr[], int arrSize)
                 max = arr[i];
             }
         }
-        return max;
+        (*ref) = max;
     }
 int main()
 {
-    int arr[] = {10, 40, 50, 1340, 0};
+    int ref = 0;
+    int arr[5] = {10, 40, 50, 1340, 0};
     int arrSize = sizeof(arr)/sizeof(arr[0]);
-    printf("Grootste nummer uit de array is %d", largest(arr, arrSize));
+    largest(arr, arrSize, &ref);
+    printf("Grootste nummer uit de array is %d", ref);
     return 0;
 }

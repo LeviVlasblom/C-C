@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "xstring": "c",
-        "string": "c"
+        "string": "c",
+        "stdio.h": "c"
     }
 }
